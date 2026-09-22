@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Clothify — trend-setting fashion for every style." />
+  <title>Clothify — Trend-Setting Fashion</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: { brand: '#4f46e5' }
+        }
+      }
+    };
+  </script>
+</head>
+<body class="bg-gray-50 text-gray-800 antialiased">
+  <header class="sticky top-0 z-50 border-b border-gray-100 bg-white/95 shadow-sm backdrop-blur">
+    <nav class="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8" aria-label="Main navigation">
+      <a href="#home" class="text-2xl font-black tracking-widest text-indigo-600">CLOTHIFY</a>
+      <div class="hidden items-center gap-8 md:flex">
+        <a href="#home" class="text-gray-600 transition hover:text-indigo-600">Home</a>
+        <a href="#shop" class="text-gray-600 transition hover:text-indigo-600">Shop</a>
+        <a href="#shop" class="text-gray-600 transition hover:text-indigo-600">Men</a>
+        <a href="#shop" class="text-gray-600 transition hover:text-indigo-600">Women</a>
+        <a href="#contact" class="text-gray-600 transition hover:text-indigo-600">Contact</a>
+      </div>
+      <div class="flex items-center gap-5">
+        <button id="search-button" type="button" class="text-gray-600 transition hover:text-indigo-600" aria-label="Search products">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z" /></svg>
+        </button>
+        <button type="button" class="relative text-gray-600 transition hover:text-indigo-600" aria-label="Shopping cart">
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 0 0-8 0v4M5 9h14l1 12H4L5 9Z" /></svg>
+          <span id="cart-count" class="absolute -right-2 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-indigo-600 text-[10px] text-white">0</span>
+        </button>
+      </div>
+    </nav>
+    <div id="search-panel" class="hidden border-t border-gray-100 bg-white px-4 py-3">
+      <label class="mx-auto flex max-w-xl items-center gap-2 rounded-lg bg-gray-100 px-3 py-2">
+        <span class="sr-only">Search products</span>
+        <input id="search-input" class="w-full bg-transparent outline-none" type="search" placeholder="Search the collection..." />
+      </label>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="relative flex min-h-[60vh] items-center overflow-hidden bg-gray-900">
+      <img class="absolute inset-0 h-full w-full object-cover opacity-60" src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1950&q=80" alt="A curated fashion store" />
+      <div class="relative mx-auto w-full max-w-7xl px-4 py-20 text-center text-white sm:px-6 lg:px-8">
+        <p class="mb-4 text-sm font-semibold uppercase tracking-[0.35em] text-indigo-300">The new collection is here</p>
+        <h1 class="mb-5 text-4xl font-extrabold tracking-tight md:text-6xl">Redefine Your Style</h1>
+        <p class="mx-auto mb-8 max-w-2xl text-lg text-gray-200 md:text-xl">Discover the latest trends in fashion with quality that speaks volumes and designs that make heads turn.</p>
+        <div class="flex flex-wrap justify-center gap-4">
+          <a href="#shop" class="rounded-full bg-indigo-600 px-8 py-3 font-semibold shadow-lg transition hover:scale-105 hover:bg-indigo-700">Shop Now</a>
+          <a href="#about" class="rounded-full bg-white px-8 py-3 font-semibold text-gray-900 shadow-lg transition hover:scale-105 hover:bg-gray-100">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+    <section id="shop" class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="mb-10 flex flex-wrap items-end justify-between gap-4">
+        <div><p class="mb-2 text-sm font-semibold uppercase tracking-widest text-indigo-600">Handpicked for you</p><h2 class="text-3xl font-bold text-gray-900">Featured Products</h2></div>
+        <button id="view-all" type="button" class="font-semibold text-indigo-600 hover:text-indigo-800">View all →</button>
+      </div>
+      <div id="product-grid" class="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
+        <article class="product-card group overflow-hidden rounded-lg bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl" data-name="Classic Denim Jacket">
+          <div class="h-80 overflow-hidden"><img class="h-full w-full object-cover transition duration-500 group-hover:scale-110" src="https://images.unsplash.com/photo-1523381093583-0595d7593bcf?auto=format&fit=crop&w=668&q=80" alt="Classic denim jacket" loading="lazy" /></div>
+          <div class="p-6"><h3 class="mb-2 text-lg font-medium text-gray-900">Classic Denim Jacket</h3><div class="flex items-center justify-between"><span class="text-xl font-bold text-indigo-600">$89.00</span><button class="add-to-cart rounded bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-600" type="button">Add to Cart</button></div></div>
+        </article>
+        <article class="product-card group overflow-hidden rounded-lg bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl" data-name="Summer Floral Dress">
+          <div class="h-80 overflow-hidden"><img class="h-full w-full object-cover transition duration-500 group-hover:scale-110" src="https://images.unsplash.com/photo-1516826957135-700dedea696c?auto=format&fit=crop&w=668&q=80" alt="Summer floral dress" loading="lazy" /></div>
+          <div class="p-6"><h3 class="mb-2 text-lg font-medium text-gray-900">Summer Floral Dress</h3><div class="flex items-center justify-between"><span class="text-xl font-bold text-indigo-600">$59.00</span><button class="add-to-cart rounded bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-600" type="button">Add to Cart</button></div></div>
+        </article>
+        <article class="product-card group overflow-hidden rounded-lg bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl" data-name="Premium Casual Shirt">
+          <div class="h-80 overflow-hidden"><img class="h-full w-full object-cover transition duration-500 group-hover:scale-110" src="https://images.unsplash.com/photo-1552374196-c4e74c6e26b0?auto=format&fit=crop&w=668&q=80" alt="Premium casual shirt" loading="lazy" /></div>
+          <div class="p-6"><h3 class="mb-2 text-lg font-medium text-gray-900">Premium Casual Shirt</h3><div class="flex items-center justify-between"><span class="text-xl font-bold text-indigo-600">$45.00</span><button class="add-to-cart rounded bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-600" type="button">Add to Cart</button></div></div>
+        </article>
+        <article class="product-card group overflow-hidden rounded-lg bg-white shadow-md transition hover:-translate-y-1 hover:shadow-xl" data-name="Urban Street Sneaker">
+          <div class="h-80 overflow-hidden"><img class="h-full w-full object-cover transition duration-500 group-hover:scale-110" src="https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=668&q=80" alt="Urban street sneaker" loading="lazy" /></div>
+          <div class="p-6"><h3 class="mb-2 text-lg font-medium text-gray-900">Urban Street Sneaker</h3><div class="flex items-center justify-between"><span class="text-xl font-bold text-indigo-600">$120.00</span><button class="add-to-cart rounded bg-gray-900 px-4 py-2 text-sm font-semibold text-white transition hover:bg-indigo-600" type="button">Add to Cart</button></div></div>
+        </article>
+      </div>
+      <p id="empty-state" class="mt-8 hidden text-center text-gray-500">No products match your search.</p>
+    </section>
+
+    <section id="about" class="bg-indigo-50 px-4 py-14 text-center"><h2 class="mb-3 text-2xl font-bold text-gray-900">Style made simple</h2><p class="mx-auto max-w-2xl text-gray-600">We bring you thoughtfully selected essentials and statement pieces designed to move with your everyday life.</p></section>
+  </main>
+
+  <footer id="contact" class="bg-gray-900 py-12 text-gray-300">
+    <div class="mx-auto grid max-w-7xl grid-cols-1 gap-8 px-4 sm:px-6 md:grid-cols-4 lg:px-8">
+      <div><a href="#home" class="mb-4 block text-2xl font-bold tracking-widest text-white">CLOTHIFY</a><p>Bringing you quality clothing with unmatched style.</p></div>
+      <div><h3 class="mb-4 font-semibold text-white">Quick Links</h3><ul class="space-y-2"><li><a class="hover:text-indigo-400" href="#about">About Us</a></li><li><a class="hover:text-indigo-400" href="#contact">Shipping Info</a></li><li><a class="hover:text-indigo-400" href="#contact">Privacy Policy</a></li></ul></div>
+      <div><h3 class="mb-4 font-semibold text-white">Customer Care</h3><ul class="space-y-2"><li><a class="hover:text-indigo-400" href="#contact">Contact Us</a></li><li><a class="hover:text-indigo-400" href="#contact">FAQ</a></li><li><a class="hover:text-indigo-400" href="#contact">Returns</a></li></ul></div>
+      <div><h3 class="mb-4 font-semibold text-white">Newsletter</h3><p class="mb-4">Subscribe for special offers and updates.</p><form id="newsletter-form" class="flex overflow-hidden rounded"><input required type="email" placeholder="Your Email" aria-label="Email address" class="w-full px-4 py-2 text-gray-900 outline-none" /><button class="bg-indigo-600 px-4 py-2 font-semibold text-white transition hover:bg-indigo-700" type="submit">Join</button></form><p id="newsletter-message" class="mt-2 text-sm text-indigo-300" role="status"></p></div>
+    </div>
+    <div class="mx-auto mt-12 max-w-7xl border-t border-gray-800 px-4 pt-8 text-center text-sm sm:px-6 lg:px-8"><p>&copy; 2026 Clothify. All rights reserved.</p></div>
+  </footer>
+  <script>
+    const cartCount = document.querySelector('#cart-count');
+    let cart = 0;
+    document.querySelectorAll('.add-to-cart').forEach((button) => button.addEventListener('click', () => {
+      cartCount.textContent = ++cart;
+      button.textContent = 'Added!';
+      setTimeout(() => { button.textContent = 'Add to Cart'; }, 900);
+    }));
+    const searchPanel = document.querySelector('#search-panel');
+    const searchInput = document.querySelector('#search-input');
+    document.querySelector('#search-button').addEventListener('click', () => { searchPanel.classList.toggle('hidden'); if (!searchPanel.classList.contains('hidden')) searchInput.focus(); });
+    function filterProducts() {
+      const term = searchInput.value.toLowerCase(); let visible = 0;
+      document.querySelectorAll('.product-card').forEach((card) => { const match = card.dataset.name.toLowerCase().includes(term); card.classList.toggle('hidden', !match); if (match) visible++; });
+      document.querySelector('#empty-state').classList.toggle('hidden', visible > 0);
+    }
+    searchInput.addEventListener('input', filterProducts);
+    document.querySelector('#view-all').addEventListener('click', () => { searchInput.value = ''; filterProducts(); window.location.hash = 'shop'; });
+    document.querySelector('#newsletter-form').addEventListener('submit', (event) => { event.preventDefault(); document.querySelector('#newsletter-message').textContent = 'Thanks for subscribing!'; event.target.reset(); });
+  </script>
+</body>
+</html>
